@@ -46,6 +46,10 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    has_many :cats,
+        foreign_key: :user_id,
+        class_name: :Cat
+
 
 
 
