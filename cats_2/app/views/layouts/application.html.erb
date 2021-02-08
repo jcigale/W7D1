@@ -9,9 +9,16 @@
   </head>
 
   <body>
-    <header>
-    
-    </header>
+
+
+    <% if logged_in? %>
+        <h2>Welcome <%= current_user.user_name %> </h2>
+        <button>Log out</button>
+    <% else %>
+        <a href = "<%= new_user_url(current_user) %>">Log in</a>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
