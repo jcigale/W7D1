@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2021_02_08_193653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
-    t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
 end

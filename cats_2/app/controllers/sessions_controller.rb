@@ -9,13 +9,18 @@ class SessionsController < ApplicationController
             params[:user][:user_name],
             params[:user][:password],
         )
-
+        if @user.nil?
+            render :new
+        else
+            login!(@user)
+            redirect_to cats_url
+        end
 
     end
 
     def destroy
-        
-
+        logout!
+        redirect_to cats_url
     end
 
 
